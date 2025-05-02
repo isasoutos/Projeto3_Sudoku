@@ -11,6 +11,15 @@ int main(){
     do
     {
         nivel = menu();
+        if(nivel == 1){
+
+        }else if (nivel == 2){
+
+        }else if (nivel == 3){
+
+        }else if (nivel == 4){
+            
+        }
 
     } while (nivel =! 4);
     

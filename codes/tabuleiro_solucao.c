@@ -4,7 +4,7 @@
 #include <stdlib.h>
 #include <time.h>
 
-int suduko_completo_facil[TAM_SUDOKU][TAM_SUDOKU] = {
+int sudoku_completo_facil[TAM_SUDOKU][TAM_SUDOKU] = {
     {3, 1, 5, 2, 9, 7, 4, 6, 8},
     {4, 2, 6, 3, 5, 8, 1, 7, 9},
     {7, 9, 8, 4, 6, 1, 3, 2, 5},
@@ -14,4 +14,16 @@ int suduko_completo_facil[TAM_SUDOKU][TAM_SUDOKU] = {
     {6, 4, 3, 9, 1, 2, 5, 8, 7},
     {2, 5, 7, 6, 8, 3, 9, 4, 1},
     {9, 8, 1, 7, 4, 5, 2, 3, 6}
+};
+
+int sudoku_jogador_facil[TAM_SUDOKU][TAM_SUDOKU] = {
+    {3, 1, 0, 0, 9, 0, 4, 0, 8},
+    {4, 0, 0, 0, 0, 8, 0, 0, 9},
+    {0, 9, 8, 4, 0, 1, 0, 0, 0},
+    {0, 6, 0, 0, 0, 9, 7, 5, 0},
+    {8, 0, 9, 0, 7, 0, 6, 0, 2},
+    {5, 7, 2, 0, 3, 0, 0, 9, 0},
+    {0, 4, 3, 0, 1, 0, 5, 8, 7},
+    {2, 5, 7, 6, 0, 3, 9, 0, 1},
+    {0, 0, 1, 7, 4, 0, 2, 0, 0}
 };

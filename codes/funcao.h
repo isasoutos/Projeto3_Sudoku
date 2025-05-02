@@ -7,4 +7,10 @@ typedef struct{
     int numero;
     int valor;
     int fixo;
+    int sudoku_completo_facil[TAM_SUDOKU][TAM_SUDOKU];
+    int sudoku_jogador_facil[TAM_SUDOKU][TAM_SUDOKU];
 }jogada;
+
+void validar_jogada(jogada *);
+
+int menu ();

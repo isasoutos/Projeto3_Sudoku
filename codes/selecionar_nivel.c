@@ -8,10 +8,10 @@ int menu(){
     int nivel;
 
     printf("------------------------------\n");
-    printf("1- Fácil");
-    printf("2- Médio");
-    printf("3- Difícil");
-    printf("4- Mestre");
+    printf("1- Fácil\n");
+    printf("2- Médio\n");
+    printf("3- Difícil\n");
+    printf("4- Mestre\n");
 
     printf("Digite o que deseja: ");
     scanf("%d", &nivel);
