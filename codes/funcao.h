@@ -14,3 +14,5 @@ typedef struct{
 void validar_jogada(jogada *);
 
 int menu ();
+
+void imprimir_tabuleiro_facil(jogada *);
