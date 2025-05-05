@@ -29,6 +29,6 @@ void carregar_tabuleiros(jogada*lista){
         {0, 0, 1, 7, 4, 0, 2, 0, 0}
     };
 
-    memcpy(temp_completo, temp_completo, sizeof(temp_completo));
-    memcpy(temp_jogador, temp_jogador, sizeof(temp_jogador));
+    memcpy(lista->sudoku_completo_facil, temp_completo, sizeof(temp_completo));
+    memcpy(lista->sudoku_jogador_facil, temp_jogador, sizeof(temp_jogador));
 }

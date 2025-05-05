@@ -7,8 +7,8 @@
 int main(){
     jogada *lista = malloc(sizeof(jogada));
     int nivel;
-    do
-    {
+
+    do{
         nivel = menu();
         if(nivel == 1){
             carregar_tabuleiros(lista);
@@ -16,6 +16,9 @@ int main(){
         }else if (nivel == 2){
 
         }else if (nivel == 3){
+
+        }else if (nivel == 4){
+            printf("Encerrando o jogo...\n");
         }
 
     } while (nivel =! 4);

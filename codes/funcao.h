@@ -18,4 +18,4 @@ void imprimir_tabuleiro_facil(jogada *);
 void jogar_sudoku(jogada *);
 void jogo (jogada *);
 void carregar_tabuleiros(jogada*);
-
+void solicitar_jogada(jogada *);

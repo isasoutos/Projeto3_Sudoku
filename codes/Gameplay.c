@@ -15,18 +15,13 @@ int jogo_completo(jogada *lista) {
     return 1; // Completou corretamente
 }
 
-void jogo (jogada *lista) {
+void jogo(jogada *lista) {
     while (!jogo_completo(lista)) {
-        imprimir_tabuleiro_facil(lista);  // Exibe o tabuleiro atual
+        imprimir_tabuleiro_facil(lista);
 
-        printf("Digite a linha (0-8), coluna (0-8) e o número (1-9): ");
-        scanf("%d %d %d", &lista->linha, &lista->coluna, &lista->numero);
+        solicitar_jogada(lista);
 
-        if (lista->linha < 0 || lista->linha >= TAM_SUDOKU ||
-            lista->coluna < 0 || lista->coluna >= TAM_SUDOKU ||
-            lista->numero < 1 || lista->numero > 9) {
-            printf("Entrada inválida! Tente novamente.\n");
-        } else {
+        if (lista->linha != -1) { // Se a entrada foi válida
             if (validar_jogada_facil(lista)) {
                 printf("Jogada válida!\n");
             } else {
