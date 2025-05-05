@@ -7,11 +7,15 @@
 void solicitar_jogada(jogada *lista) {
     int linha, coluna, numero;
 
-    printf("Digite a linha (0-8), coluna (0-8) e o número (1-9): ");
-    scanf("%d %d %d", &linha, &coluna, &numero);
+    printf("Digite a linha (1-9): ");
+    scanf("%d", &linha);
+    printf("Digite a coluna (1-9): ");
+    scanf("%d", &coluna);
+    printf("Digite a número (1-9): ");
+    scanf("%d", &numero);
 
-    if (linha < 0 || linha >= TAM_SUDOKU ||
-        coluna < 0 || coluna >= TAM_SUDOKU ||
+    if (linha < 1 || linha >=9 ||
+        coluna < 1 || coluna >= 9 ||
         numero < 1 || numero > 9) {
         printf("Entrada inválida! Tente novamente.\n");
         lista->linha = -1;  // sinaliza jogada inválida
