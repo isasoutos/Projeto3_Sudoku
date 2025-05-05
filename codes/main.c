@@ -7,18 +7,15 @@
 int main(){
     jogada *lista = malloc(sizeof(jogada));
     int nivel;
-
     do
     {
         nivel = menu();
         if(nivel == 1){
-
+            carregar_tabuleiros(lista);
+            jogo(lista);
         }else if (nivel == 2){
 
         }else if (nivel == 3){
-
-        }else if (nivel == 4){
-            
         }
 
     } while (nivel =! 4);
@@ -26,3 +23,4 @@ int main(){
     free(lista);
     return 0;
 }
+

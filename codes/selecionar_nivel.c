@@ -16,4 +16,6 @@ int menu(){
     printf("Digite o que deseja: ");
     scanf("%d", &nivel);
     printf("------------------------------\n");
+
+    return nivel;
 }

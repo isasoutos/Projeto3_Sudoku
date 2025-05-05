@@ -10,7 +10,7 @@ void imprimir_tabuleiro_facil(jogada *lista) {
         for (int j = 0; j < TAM_SUDOKU; j++) {
             // Colocar um underline para indicar os números vazios do sudoku
             if (lista->sudoku_jogador_facil[i][j] == 0) {
-                printf("_");
+                printf("_ ");
             } else {
                 printf("%d ", lista->sudoku_jogador_facil[i][j]);
             }

@@ -1,6 +1,6 @@
 #define TAM_SUDOKU 9
 
-// Criando uma estrutura para melhor disponibilidade das variaveis para os valores do sudoku
+// Estrutura criada para melhor disponibilidade das variáveis para os valores do sudoku
 typedef struct{
     int linha;
     int coluna;
@@ -11,8 +11,11 @@ typedef struct{
     int sudoku_jogador_facil[TAM_SUDOKU][TAM_SUDOKU];
 }jogada;
 
-void validar_jogada(jogada *);
-
 int menu ();
-
+int validar_jogada_facil(jogada *);
+int jogo_completo (jogada*);
 void imprimir_tabuleiro_facil(jogada *);
+void jogar_sudoku(jogada *);
+void jogo (jogada *);
+void carregar_tabuleiros(jogada*);
+
