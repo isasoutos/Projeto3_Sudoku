@@ -8,11 +8,22 @@ int jogo_completo(jogada *lista) {
     for (int i = 0; i < TAM_SUDOKU; i++) {
         for (int j = 0; j < TAM_SUDOKU; j++) {
             if (lista->sudoku_jogador_facil[i][j] != lista->sudoku_completo_facil[i][j]) {
-                return 0; // Ainda não está completo
+                return 0; 
             }
         }
     }
-    return 1; // Completou corretamente
+    return 1; 
+}
+
+int jogo_completo_medio(jogada *lista) {
+    for (int i = 0; i < TAM_SUDOKU; i++) {
+        for (int j = 0; j < TAM_SUDOKU; j++) {
+            if (lista->jogador_medio[i][j] != lista->completo_medio[i][j]) {
+                return 0; 
+            }
+        }
+    }
+    return 1; 
 }
 
 void jogo(jogada *lista) {
@@ -31,5 +42,24 @@ void jogo(jogada *lista) {
     }
 
     imprimir_tabuleiro_facil(lista);
+    printf("Parabéns! Você completou o Sudoku!\n");
+}
+
+void jogo_medio(jogada *lista) {
+    while (!jogo_completo_medio(lista)) {
+        imprimir_tabuleiro_medio(lista);
+
+        solicitar_jogada(lista);
+
+        if (lista->linha != -1) { // Se a entrada foi válida
+            if (validar_jogada_medio(lista)) {
+                printf("Jogada válida!\n");
+            } else {
+                printf("Jogada inválida. Tente novamente.\n");
+            }
+        }
+    }
+
+    imprimir_tabuleiro_medio(lista);
     printf("Parabéns! Você completou o Sudoku!\n");
 }

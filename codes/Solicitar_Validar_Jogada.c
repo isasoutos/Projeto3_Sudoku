@@ -11,7 +11,7 @@ void solicitar_jogada(jogada *lista) {
     scanf("%d", &linha);
     printf("Digite a coluna (1-9): ");
     scanf("%d", &coluna);
-    printf("Digite a número (1-9): ");
+    printf("Digite o número (1-9): ");
     scanf("%d", &numero);
 
     if (linha < 1 || linha >=9 ||
@@ -20,8 +20,8 @@ void solicitar_jogada(jogada *lista) {
         printf("Entrada inválida! Tente novamente.\n");
         lista->linha = -1;  // sinaliza jogada inválida
     } else {
-        lista->linha = linha;
-        lista->coluna = coluna;
+        lista->linha = linha -1;
+        lista->coluna = coluna -1;
         lista->numero = numero;
     }
 }
@@ -34,6 +34,22 @@ int validar_jogada_facil(jogada * lista) {
 
     if (lista->sudoku_completo_facil[lista->linha][lista->coluna] == lista->numero) {
         lista->sudoku_jogador_facil[lista->linha][lista->coluna] = lista->numero;
+        printf("Jogada correta!\n");
+        return 1;
+    } else {
+        printf("Jogada incorreta!\n");
+        return 0;
+    }
+}
+
+int validar_jogada_medio(jogada * lista) {
+    if (lista->jogador_medio[lista->linha][lista->coluna] != 0) {
+        printf("Essa posição já foi preenchida!\n");
+        return 0;
+    }
+
+    if (lista->completo_medio[lista->linha][lista->coluna] == lista->numero) {
+        lista->jogador_medio[lista->linha][lista->coluna] = lista->numero;
         printf("Jogada correta!\n");
         return 1;
     } else {

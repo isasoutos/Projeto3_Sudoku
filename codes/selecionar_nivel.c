@@ -6,8 +6,11 @@
 
 int menu(){
     int nivel;
+    printf("---------------------------------------------------------------\n");
+    printf("Olá jogador! Espero que esteja bem, então vamos começar.\n");
+    printf("Pode escolher o nível que deseja jogar!\n");
 
-    printf("------------------------------\n");
+    printf("---------------------------------------------------------------\n");
     printf("1- Fácil\n");
     printf("2- Médio\n");
     printf("3- Difícil\n");
@@ -15,7 +18,7 @@ int menu(){
 
     printf("Digite o que deseja: ");
     scanf("%d", &nivel);
-    printf("------------------------------\n");
+    printf("---------------------------------------------------------------\n");
 
     return nivel;
 }

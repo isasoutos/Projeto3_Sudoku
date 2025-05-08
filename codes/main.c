@@ -14,7 +14,8 @@ int main(){
             carregar_tabuleiros(lista);
             jogo(lista);
         }else if (nivel == 2){
-
+            carregar_tabuleiros_medio(lista);
+            jogo_medio(lista);
         }else if (nivel == 3){
 
         }else if (nivel == 4){
