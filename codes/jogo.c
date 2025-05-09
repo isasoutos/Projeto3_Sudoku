@@ -26,34 +26,39 @@ int jogo_completo_medio(jogada *lista) {
     return 1; 
 }
 
+
 void jogo(jogada *lista) {
     while (!jogo_completo(lista)) {
         imprimir_tabuleiro_facil(lista);
-        solicitar_jogada(lista);
 
-        if (lista->numero == 0) {
-            char opcao;
-            printf("\nDeseja salvar seu progresso antes de voltar ao menu? (s/n): ");
-            scanf(" %c", &opcao);
-            getchar(); // limpa o \n pendente
+        while (1) {
+            solicitar_jogada(lista);
 
-    if (opcao == 's' || opcao == 'S') {
-        salvar_progresso(lista);
-        printf("Progresso salvo!\n");
-    } else {
-        printf("Progresso não salvo.\n");
-    }
+            if (lista->numero == 0) {
+                char opcao;
+                printf("\nDeseja salvar seu progresso antes de voltar ao menu? (s/n): ");
+                scanf(" %c", &opcao);
+                getchar(); 
 
-    printf("Voltando ao menu principal...\n");
-    return;
-}
+                if (opcao == 's' || opcao == 'S') {
+                    salvar_progresso(lista);
+                    printf("Progresso salvo!\n");
+                } else {
+                    printf("Progresso não salvo.\n");
+                }
 
+                printf("Voltando ao menu principal...\n");
+                return;
+            }
 
-        if (lista->linha != -1) {
-            if (validar_jogada_facil(lista)) {
-                printf("Jogada válida!\n");
-            } else {
-                printf("Jogada inválida. Tente novamente.\n");
+            if (lista->linha != -1) {
+                if (validar_jogada_facil(lista)) {
+                    printf("Jogada válida!\n");
+                    break;
+                } else {
+                    printf("Jogada inválida. Tente novamente.\n\n");
+                    imprimir_tabuleiro_facil(lista);
+                }
             }
         }
     }
