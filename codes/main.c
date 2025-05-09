@@ -18,9 +18,10 @@ int main() {
     if (carregar_progresso(lista)) {
         if (deseja_continuar_salvo()) {
             printf("Progresso carregado com sucesso!\n");
+            imprimir_tabuleiro_facil;
             carregado = 1;
         } else {
-            remove("save.bin");  
+            remove("save.bin");
             printf("Novo jogo será iniciado.\n");
         }
     }
@@ -28,22 +29,23 @@ int main() {
     do {
         nivel = menu();
 
-        if (nivel == 1 && !carregado) {
-            carregar_tabuleiros(lista);
-        } else if (nivel == 2 && !carregado) {
-            carregar_tabuleiros_medio(lista);
+        if (!carregado) {
+            if (nivel == 1) {
+                carregar_tabuleiros(lista);
+            } else if (nivel == 2) {
+                carregar_tabuleiros_medio(lista);
+            }
         }
 
-
-    if (nivel == 1) {
-        jogo(lista);
+        if (nivel == 1) {
+            jogo(lista);
         } else if (nivel == 2) {
-        jogo_medio(lista);
+            jogo_medio(lista);
         } else if (nivel == 3) {
-        sair_do_jogo();}
+            sair_do_jogo();
+        }
 
     } while (nivel != 3);
-
 
     salvar_progresso(lista);
     free(lista);

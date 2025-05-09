@@ -68,15 +68,37 @@ void jogo(jogada *lista) {
 
 
 void jogo_medio(jogada *lista) {
-    while (!jogo_completo_medio(lista)) {
+ while (!jogo_completo_medio(lista)) {
         imprimir_tabuleiro_medio(lista);
-        solicitar_jogada(lista);
 
-        if (lista->linha != -1) { // Se a entrada foi válida
-            if (validar_jogada_medio(lista)) {
-                printf("Jogada válida!\n");
-            } else {
-                printf("Jogada inválida. Tente novamente.\n");
+        while (1) {
+            solicitar_jogada(lista);
+
+            if (lista->numero == 0) {
+                char opcao;
+                printf("\nDeseja salvar seu progresso antes de voltar ao menu? (s/n): ");
+                scanf(" %c", &opcao);
+                getchar(); 
+
+                if (opcao == 's' || opcao == 'S') {
+                    salvar_progresso(lista);
+                    printf("Progresso salvo!\n");
+                } else {
+                    printf("Progresso não salvo.\n");
+                }
+
+                printf("Voltando ao menu principal...\n");
+                return;
+            }
+
+            if (lista->linha != -1) {
+                if (validar_jogada_medio(lista)) {
+                    printf("Jogada válida!\n");
+                    break;
+                } else {
+                    printf("Jogada inválida. Tente novamente.\n\n");
+                    imprimir_tabuleiro_medio(lista);
+                }
             }
         }
     }
