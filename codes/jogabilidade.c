@@ -32,9 +32,22 @@ void jogo(jogada *lista) {
         solicitar_jogada(lista);
 
         if (lista->numero == 0) {
-            printf("Voltando ao menu principal...\n");
-            return;
-        }
+            char opcao;
+            printf("\nDeseja salvar seu progresso antes de voltar ao menu? (s/n): ");
+            scanf(" %c", &opcao);
+            getchar(); // limpa o \n pendente
+
+    if (opcao == 's' || opcao == 'S') {
+        salvar_progresso(lista);
+        printf("Progresso salvo!\n");
+    } else {
+        printf("Progresso não salvo.\n");
+    }
+
+    printf("Voltando ao menu principal...\n");
+    return;
+}
+
 
         if (lista->linha != -1) {
             if (validar_jogada_facil(lista)) {
