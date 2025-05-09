@@ -4,8 +4,6 @@ typedef struct{
     int linha;
     int coluna;
     int numero;
-    int valor;
-    int fixo;
     int sudoku_completo_facil[TAM_SUDOKU][TAM_SUDOKU];
     int sudoku_jogador_facil[TAM_SUDOKU][TAM_SUDOKU];
     int completo_medio[TAM_SUDOKU][TAM_SUDOKU];
