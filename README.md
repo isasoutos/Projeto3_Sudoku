@@ -21,6 +21,7 @@ Curso: Ciência de Dados e Inteligência Artificial - 2°Ciclo - CCP230
     -  Salvar Progresso: Cria um arquivo binário para salvar o progresso do jogo.
     -  Carregar Progresso:Carrega o processo do jogo no mesmo arquivo binário do salvar progresso.
     -  Ler Numero Seguro: Tratativa de erros para caso o jogador seleciona alguma letra ou número e o código não entrar em loop.
+    -  Vidas: Quando a quantidade de vidas acabar o jogador perde o jogo.
 
 ## Tecnologias Utilizadas
  - Linguagem C
