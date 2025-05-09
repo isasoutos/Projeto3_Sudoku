@@ -29,10 +29,14 @@ int jogo_completo_medio(jogada *lista) {
 void jogo(jogada *lista) {
     while (!jogo_completo(lista)) {
         imprimir_tabuleiro_facil(lista);
-
         solicitar_jogada(lista);
 
-        if (lista->linha != -1) { // Se a entrada foi válida
+        if (lista->numero == 0) {
+            printf("Voltando ao menu principal...\n");
+            return;
+        }
+
+        if (lista->linha != -1) {
             if (validar_jogada_facil(lista)) {
                 printf("Jogada válida!\n");
             } else {
@@ -45,10 +49,10 @@ void jogo(jogada *lista) {
     printf("Parabéns! Você completou o Sudoku!\n");
 }
 
+
 void jogo_medio(jogada *lista) {
     while (!jogo_completo_medio(lista)) {
         imprimir_tabuleiro_medio(lista);
-
         solicitar_jogada(lista);
 
         if (lista->linha != -1) { // Se a entrada foi válida

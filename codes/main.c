@@ -56,4 +56,5 @@ int main() {
 
 void sair_do_jogo() {
     printf("\nSaindo do jogo... Até logo!\n");
-    exit(0); // Encerra o programa imediatamente
+    exit(0); 
+} 
