@@ -4,6 +4,7 @@ typedef struct{
     int linha;
     int coluna;
     int numero;
+    int vidas;
     int sudoku_completo_facil[TAM_SUDOKU][TAM_SUDOKU];
     int sudoku_jogador_facil[TAM_SUDOKU][TAM_SUDOKU];
     int completo_medio[TAM_SUDOKU][TAM_SUDOKU];
@@ -13,7 +14,7 @@ typedef struct{
 //main.c
 void sair_do_jogo();
 
-//manu.c
+//menu.c
 int menu ();
 
 //gabarito_tabuleiro.c
@@ -41,4 +42,5 @@ int validar_jogada_medio(jogada *);
 void salvar_progresso(jogada *jogador);
 int carregar_progresso(jogada *jogador);
 
-
+// Vidas
+void perder_vida(jogada *);

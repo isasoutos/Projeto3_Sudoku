@@ -3,6 +3,7 @@
 #include "funcao.h"
 #include <stdlib.h>
 
+// Tabuleiros obtidos do jogo (aplicativo) Numpuz
 void carregar_tabuleiros(jogada*lista){
     int temp_completo[TAM_SUDOKU][TAM_SUDOKU] = {
         {3, 1, 5, 2, 9, 7, 4, 6, 8},

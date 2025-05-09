@@ -39,6 +39,7 @@ void solicitar_jogada(jogada *lista) {
     }
 
     numero = ler_numero_seguro("Digite o número (1-9 ou 0 para sair): ");
+    printf("\n");
     if (numero == 0) {
         lista->numero = 0;
         lista->linha = -1;

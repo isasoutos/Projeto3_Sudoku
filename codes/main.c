@@ -14,6 +14,7 @@ int main() {
     int nivel;
     jogada *lista = malloc(sizeof(jogada));
     int carregado = 0;
+    lista->vidas = 3;
 
     if (carregar_progresso(lista)) {
         if (deseja_continuar_salvo()) {

@@ -53,9 +53,12 @@ void jogo(jogada *lista) {
             if (lista->linha != -1) {
                 if (validar_jogada_facil(lista)) {
                     printf("Jogada válida!\n");
+                    printf("\n");
+                    printf("Quantidade de vidas: %d\n", lista->vidas);
                     break;
                 } else {
                     printf("Jogada inválida. Tente novamente.\n\n");
+                    perder_vida(lista);
                     imprimir_tabuleiro_facil(lista);
                 }
             }
@@ -94,9 +97,12 @@ void jogo_medio(jogada *lista) {
             if (lista->linha != -1) {
                 if (validar_jogada_medio(lista)) {
                     printf("Jogada válida!\n");
+                    printf("\n");
+                    printf("Quantidade de vidas: %d\n", lista->vidas);
                     break;
                 } else {
                     printf("Jogada inválida. Tente novamente.\n\n");
+                    perder_vida(lista);
                     imprimir_tabuleiro_medio(lista);
                 }
             }
@@ -105,4 +111,14 @@ void jogo_medio(jogada *lista) {
 
     imprimir_tabuleiro_medio(lista);
     printf("Parabéns! Você completou o Sudoku!\n");
+}
+
+void perder_vida(jogada * lista) {
+    lista->vidas--;
+    printf("Você perdeu uma vida! Vidas restantes: %d\n", lista->vidas);
+    
+    if (lista->vidas == 0) {
+        printf("Você perdeu! Fim de jogo.\n");
+        exit(0);
+    }
 }
