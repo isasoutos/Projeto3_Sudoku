@@ -2,7 +2,6 @@
 #include <string.h>
 #include "funcao.h"
 #include <stdlib.h>
-#include <time.h>
 
 int jogo_completo(jogada *lista) {
     for (int i = 0; i < TAM_SUDOKU; i++) {

@@ -2,7 +2,6 @@
 #include <string.h>
 #include "funcao.h"
 #include <stdlib.h>
-#include <time.h>
 
 void carregar_tabuleiros(jogada*lista){
     int temp_completo[TAM_SUDOKU][TAM_SUDOKU] = {

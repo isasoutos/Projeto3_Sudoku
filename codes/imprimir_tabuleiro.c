@@ -2,7 +2,6 @@
 #include <string.h>
 #include "funcao.h"
 #include <stdlib.h>
-#include <time.h>
 
 void imprimir_tabuleiro_facil(jogada *lista) {
     printf("    ");
