@@ -35,17 +35,17 @@ int main() {
         }
 
 
-        if (nivel == 1) {
-            jogo(lista);
-        } else if (nivel == 2) {
-            jogo_medio(lista);
-        } else if (nivel == 3) {
-            printf("Modo difícil ainda não implementado.\n");
-        } else if (nivel == 4) {
-            printf("Encerrando o jogo...\n");
-        } else {
-            printf("Opção inválida. Tente novamente.\n");
-        }
+    if (nivel == 1) {
+        jogo(lista);
+    } else if (nivel == 2) {
+        jogo_medio(lista);
+    } else if (nivel == 3) {
+        printf("Modo difícil ainda não implementado.\n");
+    } else if (nivel == 4) {
+        sair_do_jogo();
+    } else {
+        printf("Opção inválida. Tente novamente.\n");
+    }
 
     } while (nivel != 4);
 
@@ -53,3 +53,7 @@ int main() {
     free(lista);
     return 0;
 }
+
+void sair_do_jogo() {
+    printf("\nSaindo do jogo... Até logo!\n");
+    exit(0); // Encerra o programa imediatamente
