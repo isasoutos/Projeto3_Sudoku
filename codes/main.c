@@ -1,30 +1,55 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 #include "funcao.h"
-#include <stdlib.h>
-#include <time.h>
 
-int main(){
-    jogada *lista = malloc(sizeof(jogada));
+int deseja_continuar_salvo() {
+    char resposta;
+    printf("Deseja continuar o jogo salvo? (s/n): ");
+    scanf(" %c", &resposta);
+    return (resposta == 's' || resposta == 'S');
+}
+
+int main() {
     int nivel;
+    jogada *lista = malloc(sizeof(jogada));
+    int carregado = 0;
 
-    do{
+    if (carregar_progresso(lista)) {
+        if (deseja_continuar_salvo()) {
+            printf("Progresso carregado com sucesso!\n");
+            carregado = 1;
+        } else {
+            remove("save.bin");  
+            printf("Novo jogo será iniciado.\n");
+        }
+    }
+
+    do {
         nivel = menu();
-        if(nivel == 1){
-            carregar_tabuleiros(lista);
-            jogo(lista);
-        }else if (nivel == 2){
-            carregar_tabuleiros_medio(lista);
-            jogo_medio(lista);
-        }else if (nivel == 3){
 
-        }else if (nivel == 4){
-            printf("Encerrando o jogo...\n");
+        if (nivel == 1 && !carregado) {
+            carregar_tabuleiros(lista);
+        } else if (nivel == 2 && !carregado) {
+            carregar_tabuleiros_medio(lista);
         }
 
-    } while (nivel =! 4);
-    
+
+        if (nivel == 1) {
+            jogo(lista);
+        } else if (nivel == 2) {
+            jogo_medio(lista);
+        } else if (nivel == 3) {
+            printf("Modo difícil ainda não implementado.\n");
+        } else if (nivel == 4) {
+            printf("Encerrando o jogo...\n");
+        } else {
+            printf("Opção inválida. Tente novamente.\n");
+        }
+
+    } while (nivel != 4);
+
+    salvar_progresso(lista);
     free(lista);
     return 0;
 }
-

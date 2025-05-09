@@ -27,3 +27,5 @@ void imprimir_tabuleiro_medio(jogada *);
 void jogo_medio(jogada *);
 int jogo_completo_medio(jogada *);
 void carregar_tabuleiros_medio(jogada*);
+void salvar_progresso(jogada *jogador);
+int carregar_progresso(jogada *jogador);
