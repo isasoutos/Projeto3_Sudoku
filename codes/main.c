@@ -37,17 +37,13 @@ int main() {
 
     if (nivel == 1) {
         jogo(lista);
-    } else if (nivel == 2) {
+        } else if (nivel == 2) {
         jogo_medio(lista);
-    } else if (nivel == 3) {
-        printf("Modo difícil ainda não implementado.\n");
-    } else if (nivel == 4) {
-        sair_do_jogo();
-    } else {
-        printf("Opção inválida. Tente novamente.\n");
-    }
+        } else if (nivel == 3) {
+        sair_do_jogo();}
 
-    } while (nivel != 4);
+    } while (nivel != 3);
+
 
     salvar_progresso(lista);
     free(lista);

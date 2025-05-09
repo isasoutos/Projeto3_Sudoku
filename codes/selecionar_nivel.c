@@ -13,6 +13,7 @@ int menu(){
     printf("---------------------------------------------------------------\n");
     printf("1- Fácil\n");
     printf("2- Médio\n");
+    printf("3  Sair do jogo\n");
 
     printf("Digite o nível (1/2): ");
     scanf("%d", &nivel);
