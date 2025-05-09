@@ -29,6 +29,8 @@ void solicitar_jogada(jogada *lista) {
     int linha, coluna, numero;
 
     printf("Digite 0 em qualquer campo para voltar ao menu principal.\n");
+    printf("\n"); 
+
 
     linha = ler_numero_seguro("Digite a linha (1-9 ou 0 para sair): ");
     if (linha == 0) {

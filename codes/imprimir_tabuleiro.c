@@ -10,12 +10,14 @@ void imprimir_tabuleiro_facil(jogada *lista) {
         printf("%d ", col + 1);
         if ((col + 1) % 3 == 0 && col != TAM_SUDOKU - 1)
             printf("   ");
+            
     }
     printf("\n");
 
     for (int i = 0; i < TAM_SUDOKU; i++) {
         if (i % 3 == 0) {
             printf("   +-------+-------+-------+\n");
+
         }
 
         printf("%2d | ", i + 1);  
@@ -35,6 +37,8 @@ void imprimir_tabuleiro_facil(jogada *lista) {
     }
 
     printf("   +-------+-------+-------+\n");
+    printf("\n"); 
+
 }
 
 void imprimir_tabuleiro_medio(jogada *lista) {
@@ -67,4 +71,6 @@ void imprimir_tabuleiro_medio(jogada *lista) {
     }
 
     printf("   +-------+-------+-------+\n");
+    printf("\n"); 
+
 }

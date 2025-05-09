@@ -7,16 +7,14 @@
 int menu(){
     int nivel;
     printf("---------------------------------------------------------------\n");
-    printf("Olá jogador! Espero que esteja bem, então vamos começar.\n");
-    printf("Pode escolher o nível que deseja jogar!\n");
+    printf("Olá jogador! Espero que esteja bem, vamos começar!\n");
+    printf("Selecione o nível que deseja jogar!\n");
 
     printf("---------------------------------------------------------------\n");
     printf("1- Fácil\n");
     printf("2- Médio\n");
-    printf("3- Difícil\n");
-    printf("4- Mestre\n");
 
-    printf("Digite o que deseja: ");
+    printf("Digite o nível (1/2): ");
     scanf("%d", &nivel);
     printf("---------------------------------------------------------------\n");
 
